@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='fuzzydata',
+    name='financialdata',
     version='0.1',
     description='Final Financial Analytics Project Group H',
     url='https://github.com/christabelle/fuzzydata_GroupH',
-    download_url='',
+    download_url='https://github.com/christabelle/fuzzydata_GroupH/tarball/0.1',
     author='Group-H',
     author_email='christabelle@student.ie.edu',
     license='MIT License',
@@ -16,5 +16,5 @@ setup(
         'Programming Language :: Python :: 3.5'
     ],
     keywords=['final', 'financial', 'analytics', 'project'],
-    packages=['fuzzydata']
+    packages=['financialdata']
 )
