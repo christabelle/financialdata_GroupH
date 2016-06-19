@@ -2,112 +2,78 @@
 Financial Analytics Big Data Project
 
 
-# Readme Best Practices
-> A place to copy-paste your README.md from
+## Financial Data Package
 
-One of the most crucial things in your open source project is the `README.md`
-file. This repository has a ready-to-copy-paste template you can use for all
-your projects.
+This code runs 5 basic data tasks in order to make your data ready for modelling and also helps you choose among different models.
+* Automated Data Cleaning
+* Human-Assisted Data Cleaning
+* Automated Dummy Creation with Automated Supervised Binning
+* Automated Model Selection and Comparison
+* Human-Assisted Model Selection
 
-## Getting started
+### Automated Data Cleaning
 
-Copy the `README-default.md` file for yourself and start editing! At the root of
-your project, run:
-
-```shell
-curl https://raw.githubusercontent.com/jehna/readme-best-practices/master/README-default.md > README.md
-```
-
-The code above fetches the `README-default.md` file from this repository and
-renames it to `README.md`.
-
-## Fill with your own text
-
-The default template has some guiding text to get you started. However you'll
-need to edit the file with your own text to use it with your project.
+This function identifies invalid values, NAs, missing values, outliers, unreliable and out of range values. First it will check the type of data if it's numeric or not.
+First step is importing a dataset and check all the values of the columns.
+If it's not numeric it will replace missing values with the mode. For numeric it will replace NAs and unreliable values with the mean, outliers with min or max depending on the case.
 
 ```shell
-atom README.md
+autodataclean(trainingdataset)
+autodataclean(trainingdataset,testdataset)
 ```
 
-If you're using [Atom](https://atom.io/) code editor, the code above opens the
-file for editing. If necessary, substitute with your preferred markdown editor.
+### Human-Assisted Data Cleaning
 
-### Add to git and push
-
-After you've filled your `README.md` file with your own project's text, you
-should push it to your GitHub project:
+This function follows the same methodology than the automated version but allows the user to interact by allowing the selection of the value that will replace the non correct values.
+For all the cases it will ask the user to select between mean, median or other value the user wants to use. 
 
 ```shell
-git add README.md
-git commit -m "Added: README"
-git push
+manudataclean(trainingdataset)
+manudataclean(trainingdataset,testdataset)
 ```
 
-This adds the `README.md` file to your git repository, creates a commit for it
-and pushes it to GitHub (or other preferred remote repository).
+### Automated Dummy Creation with Automated Supervised Binning
 
-## Features
+This function creates bins based on the entropy with respect to the target variable, and then proceeds to create dummies for the bins.
 
-This project makes it easy to:
-* Bootstrap your open source project properly
-* Make sure everyone gets what you're trying to archive with your project
-* Follow simple instructions for a perfect `README.md`
+```shell
+autobindummy(trainingdataset,testdataset,targetvariable)
+```
 
-## Contributing
+### Automated Model Selection and Comparison
 
-As I use this for my own projects, I know this might not be the perfect approach
-for all the projects out there. If you have any ideas, just
-[open an issue][issues] and tell me what you think.
+This program takes as an input a file with multiple variables, selects a target variable and applies different classification models to later on show the most accurate one.
+First step is selecting the target variable, then it uses K-Fold method to partition training data and testing data. The number of folds that are selected is 5.
+It will first train each of the models within the partitions and finally give a result of the accuracy of that given model.
+Once each model is tested, a data frame is created with the result of all the models sorted by the one with the highest accuracy.
 
-If you'd like to contribute, please fork the repository and make changes as
-you'd like. Pull requests are warmly welcome.
+```shell
+automodel(trainingdataset,testdataset,targetvariable)
+```
 
-If your vision of a perfect `README.md` differs greatly from mine, it might be
-because your projects are for vastly different. In this case, you can create a
-new file `README-yourplatform.md` and create the perfect boilerplate for that.
+### Human-Assisted Model Selection
 
-E.g. if you have a perfect `README.md` for a Grunt project, just name it as
-`README-grunt.md`.
+This program follows the same methodology than the previous one, the only difference is that the program interacts with the user by asking which model the user wants to select.
+As a result there isn't a comparison between models but just the result of a single one.
+
+
+```shell
+manumodel(trainingdataset,testdataset,targetvariable)
+```
+
+## Contribution
+
+This project has been completed by:
+* Christabelle Santos
+* Javier Lameda
+* Michail Pintchiouk
+* Mounir
+* Natalia Hernandez
+* Sergio Salas
+* Tran Nyugen
+* Vamsee Krishna
 
 ## Licensing
 
-This project is licensed under Unlicense license. This license does not require
-you to take the license with you to your project.
-
-[issues]:https://github.com/jehna/readme-best-practices/issues/new
-
-
-If you're using Atom code editor, the code above opens the file for editing. If necessary, substitute with your preferred markdown editor.
-
-Add to git and push
-
-After you've filled your  README.md  file with your own project's text, you should push it to your GitHub project:
-
-git add README.md
-git commit -m "Added: README"
-git push
-
-This adds the  README.md  file to your git repository, creates a commit for it and pushes it to GitHub (or other preferred remote repository).
-
-Features
-
-This project makes it easy to:
-•Bootstrap your open source project properly
-•Make sure everyone gets what you're trying to archive with your project
-•Follow simple instructions for a perfect  README.md 
-
-Contributing
-
-As I use this for my own projects, I know this might not be the perfect approach for all the projects out there. If you have any ideas, just open an issue and tell me what you think.
-
-If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are warmly welcome.
-
-If your vision of a perfect  README.md  differs greatly from mine, it might be because your projects are for vastly different. In this case, you can create a new file  README-yourplatform.md  and create the perfect boilerplate for that.
-
-E.g. if you have a perfect  README.md  for a Grunt project, just name it as  README-grunt.md .
-
-Licensing
-
-This project is licensed under Unlicense license. This license does not require you to take the license with you to your project.
+This project is licensed under the MIT License.
 
