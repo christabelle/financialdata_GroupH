@@ -182,9 +182,9 @@ class autobindummy:
         print(self.traindata)
         print(self.testdata)
 
-dev = pd.read_csv("dev.csv")
-oot = pd.read_csv("oot0.csv")
-A = autobindummy(dev,oot,'ob_target')
+# dev = pd.read_csv("dev.csv")
+# oot = pd.read_csv("oot0.csv")
+# A = autobindummy(dev,oot,'ob_target')
 
 
 

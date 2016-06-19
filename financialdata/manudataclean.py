@@ -156,6 +156,6 @@ class manudataclean:
         print("Cleaned numeric variables are available in dev_num_manual and val_num_manual")
         print("Cleaned non-numeric variables are available in dev_nonnum_manual and val_nonnum_manual")
 
-dev = pd.read_csv("dev.csv")
-oot = pd.read_csv("oot0.csv")
-A = manudataclean(dev,oot)
+# dev = pd.read_csv("dev.csv")
+# oot = pd.read_csv("oot0.csv")
+# A = manudataclean(dev,oot)

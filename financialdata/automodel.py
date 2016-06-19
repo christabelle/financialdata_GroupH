@@ -58,6 +58,6 @@ class automodel:
         ratio_frame.sort_values(by="Accuracy", ascending=False)
         print(ratio_frame)
 
-dev = pd.read_csv("dev.csv")
-oot = pd.read_csv("oot0.csv")
-A = automodel(dev,oot,'ob_target')
+# dev = pd.read_csv("dev.csv")
+# oot = pd.read_csv("oot0.csv")
+# A = automodel(dev,oot,'ob_target')

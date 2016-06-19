@@ -106,6 +106,6 @@ class autodataclean:
         print("Cleaned numeric variables are available in dev_num_auto and val_num_auto")
         print("Cleaned non-numeric variables are available in dev_nonnum_auto and val_nonnum_auto")
 
-dev = pd.read_csv("dev.csv")
-oot = pd.read_csv("oot0.csv")
-A = autodataclean(dev,oot)
+# dev = pd.read_csv("dev.csv")
+# oot = pd.read_csv("oot0.csv")
+# A = autodataclean(dev,oot)

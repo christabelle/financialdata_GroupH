@@ -67,6 +67,6 @@ class manumodel:
         elif answer2.lower() == DT:
             print(functions_name_list[4], model_list[4])
 
-dev = pd.read_csv("dev.csv")
-oot = pd.read_csv("oot0.csv")
-A = manumodel(dev,oot,'ob_target')
+# dev = pd.read_csv("dev.csv")
+# oot = pd.read_csv("oot0.csv")
+# A = manumodel(dev,oot,'ob_target')
