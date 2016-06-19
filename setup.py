@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='financialdata',
-    version='0.3',
+    version='0.4',
     description='Final Financial Analytics Project Group H',
     url='https://github.com/christabelle/financialdata_GroupH',
     download_url='https://github.com/christabelle/financialdata_GroupH/tarball/0.1',
